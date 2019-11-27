@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>DNAsoccer</title>
+    <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/function/app.js"></script>
+
+<body>
+    <!-- Model 1 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="color: black">
+                    <h5 class="modal-title" id="exampleModalLabel">เข้าสู่ระบบ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="emailSig" name="emailSig" placeholder="Email" required data-error="กรุณาใส่Email">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="passwordSig" name="passwordSig" placeholder="Password" required data-error="กรุณาใส่รหัสผ่าน">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-submit">
+                                <button type="submit" class="btn btn-common" id="submit" onclick="signIn()">เข้าสู่ระบบ </button>
+                                <div id="Submit" class="h3 text-center hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-7 float-left">
+                        <a href="#">ลืมรหัสผ่าน</a>
+                    </div>
+                    <button type="button" class="btn btn-primary"><a href="#" data-toggle="modal" data-target="#Modal3" data-dismiss="modal" style="color:white;">สมัครสมาชิก</a></button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Model 1 -->
+    <!-- Model 2
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"></button>
+        -->
+    <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="color: black">
+                    <h5 class="modal-title" id="exampleModalLabel">สมัครสมาชิก</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group row" style="color: black">
+                        <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="color: black">
+                        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="color: black">
+                        <label for="FullName" class="col-sm-2 col-form-label">ชื่อ - นามสกุล</label>
+                        <div class="col-sm-10">
+                            <input type="FullName" class="form-control" id="name" placeholder="ชื่อ-นามสกุลจริง">
+                        </div>
+                    </div>
+                    <div class="form-group row" style="color: black">
+                        <label for="Number" class="col-sm-2 col-form-label">เบอร์โทรศัพท์</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="phone" placeholder="เบอร์โทรศัพท์">
+                        </div>
+                    </div>
+                    <div class="form-group" style="color: black">
+                        <label for="message-text" class="col-form-label">ที่อยู่ปัจจุบัน:</label>
+                        <textarea class="form-control" id="address"></textarea>
+                    </div>
+                    <input type='hidden' id='userstatus' value='0' />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button id="btnSave" name="save" type="button" class="btn btn-primary" onclick="saveOnClick()">สมัครสมาชิก</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Model 2-->
+    <!-- Model 3-->
+    <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+        Launch demo modal
+      </button>
+      -->
+    <div class="modal fade" id="Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="color: black">
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">เงื่อนไขการให้บริการ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body" style="color: black">
+                    <h5>กฎระเบียบการใช้สนาม</h5>
+                    <br> - กรุณาสวมเครื่องแต่งกายที่เป็นชุดกีฬา และไม่อนุญาตให้ถอดเสื้อลงเล่นในสนาม<br> - ห้ามผู้ใช้บริการสูบบุหรี่ในสนามโดยเด็ดขาด สูบบุหรี่ในสนามปรับ 2,000 บาท <br> - สามารถสูบบุหรี่ในบริเวณที่ได้จัดไว้ให้เท่านั้น<br> - ขอความกรุณา งดดื่มเครื่องเดิมแอลกอฮอล์และงดใช้สารเสพติดทุกชนิด<br>                    - ห้ามพกอาวุธเข้ามาในบริเวณสนามโดยเด็ดขาด<br> - ห้ามมิให้มีการเล่นการพนันกันในสนามและภายในคลับเฮาส์<br> - กรุณางดใช้กลอง แตรทุกชนิด และงดส่งเสียงดังหลังเวลา 21.00 น.
+                    <br> - กรุณารักษาเวลาการใช้บริการสนามอย่างเคร่งครัด<br> - ห้อง VIP ไม่ได้เป็นส่วนหนึ่งของสนาม สนใจใช้บริการติดต่อที่แคชเชียร์<br> - ไม่อนุญาตให้นำสัตว์เลี้ยงเข้ามาในบริเวณสนามและภายในคลับเฮาส์<br> - กรณีที่มีการทะเลาะวิวาทในระหว่างการเล่น
+                    ทางสนามขอสงวนสิทธิการพิจารณายกเลิกการเช่าสนามนั้นในทันที โดยผู้เช่าจะต้องชำระเงินเต็มจำนวนการเช่า<br> - ทางสนามขอสงวนสิทธิ์ในการจอดรถตามชั่วโมงที่ลูกค้าใช้บริการสนามเท่านั้น<br> - ผู้มาใช้บริการทุกท่านโปรดดูแลทรัพย์สินส่วนตัว ทางสนามจะไม่รับผิดชอบใดๆ
+                    ในกรณีที่เกิดความเสียหาย หรือสูญหายในทรัพย์สิน<br> - หากพื้นสนาม, สถานที่ และอุปกรณ์ เกิดความเสียหาย ผู้ใช้บริการจะต้องชำระค่าเสียหายตามมูลค่าจริงที่เกิดขึ้น
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success"><a href="#" data-toggle="modal" data-target="#Modal2" data-dismiss="modal" style="color:white;">ยอมรับ</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Model 3-->
+    <!-- Modal 4-->
+    <div class="modal fade" id="Modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: brown">WRONG!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body" style="color: black">
+                    กรุณาเข้าสู่ระบบก่อนการจองสนาม
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 4-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3LCgyETuSdRIqokIX7vf0XB8DAMn0qxg",
+            authDomain: "dnasoccer-7afaf.firebaseapp.com",
+            databaseURL: "https://dnasoccer-7afaf.firebaseio.com",
+            projectId: "dnasoccer-7afaf",
+            storageBucket: "dnasoccer-7afaf.appspot.com",
+            messagingSenderId: "77234107748",
+            appId: "1:77234107748:web:dbe81170ead84e91"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
+    <app-root></app-root>
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-chevron-up"></i>
+    </a>
+
+    <div id="preloader">
+        <div class="sk-circle">
+            <div class="sk-circle1 sk-child"></div>
+            <div class="sk-circle2 sk-child"></div>
+            <div class="sk-circle3 sk-child"></div>
+            <div class="sk-circle4 sk-child"></div>
+            <div class="sk-circle5 sk-child"></div>
+            <div class="sk-circle6 sk-child"></div>
+            <div class="sk-circle7 sk-child"></div>
+            <div class="sk-circle8 sk-child"></div>
+            <div class="sk-circle9 sk-child"></div>
+            <div class="sk-circle10 sk-child"></div>
+            <div class="sk-circle11 sk-child"></div>
+            <div class="sk-circle12 sk-child"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<p>profile works!</p>
+<h1 *ngIf="authenticationService.userData | async">{{ (authenticationService.userData | async)?.email }}</h1>
+<li *ngFor="let item of authenticationService.userInfo | async">
+    <p>ชื่อ <input value={{item.name}}/><button>update</button></p>
+    <p>{{item.key}}</p>
+</li>
+
+<a (click)="setdata()">ทดสอบset</a>
